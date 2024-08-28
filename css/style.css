@@ -303,9 +303,7 @@
 
 /*** Footer ***/
 .footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-    url(../img/carousel-bg-1.jpg) center center no-repeat;
-  background-size: cover;
+  background: linear-gradient(rgba(7, 10, 0), rgba(23, 58, 124));
 }
 
 .footer .btn.btn-social {
