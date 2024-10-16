@@ -369,3 +369,19 @@
   padding-right: 0;
   border-right: none;
 }
+
+.hidden {
+  display: none;
+}
+
+#otherImages img {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#otherImages img:hover {
+  opacity: 1;
+}
+
+
+
