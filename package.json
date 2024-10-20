@@ -1,7 +1,6 @@
 {
   "name": "locationdevoiture",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -18,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/assekoazareel222/locationDeVoiture/issues"
   },
-  "homepage": "https://github.com/assekoazareel222/locationDeVoiture#readme"
+  "homepage": "https://github.com/assekoazareel222/locationDeVoiture#readme",
+  "description": ""
 }
