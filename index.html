@@ -8,7 +8,7 @@
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/favicone.jpg" rel="icon" />
+    <link href="img/WhatsApp Image 2024-10-23 à 14.21.32_1d8ab823.jpg" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +42,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    
   </head>
 
   <body>
@@ -66,7 +69,7 @@
         <div class="col-lg-7 px-5 text-start">
           <div class="h-100 d-inline-flex align-items-center py-3 me-4">
             <small class="fa fa-map-marker-alt text-primary me-2"></small>
-            <small>Ancienne Sobraga, Libreville, Gabon</small>
+            <small>Au centre ville, Libreville, Gabon</small>
           </div>
           <div class="h-100 d-inline-flex align-items-center py-3">
             <small class="far fa-clock text-primary me-2"></small>
@@ -76,21 +79,18 @@
         <div class="col-lg-5 px-5 text-end">
           <div class="h-100 d-inline-flex align-items-center py-3 me-4">
             <small class="fa fa-phone-alt text-primary me-2"></small>
-            <small>+241 074951291</small>
+            <small>+241 074638595</small>
           </div>
           <div class="h-100 d-inline-flex align-items-center">
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
+            <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/profile.php?id=61559776720323&mibextid=ZbWKwL"
               ><i class="fab fa-facebook-f"></i
             ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
-              ><i class="fab fa-twitter"></i
+            <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.tiktok.com/@biabiamotors0?_t=8qrKnoKG0ww&_r=1"
+              ><i class="bi bi-tiktok"></i></a>
+            <a class="btn btn-sm-square bg-white text-primary me-1" href="https://wa.me/24104638595"
+              ><i class="fab fa-whatsapp"></i
             ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a class="btn btn-sm-square bg-white text-primary me-0" href=""
-              ><i class="fab fa-instagram"></i
-            ></a>
+            
           </div>
         </div>
       </div>
@@ -101,14 +101,24 @@
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
-      <a
-        href="index.html"
-        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
-      >
-        <h2 class="m-0 text-primary">
-          <i class="fa fa-car me-3"></i>BIABIA MOTORS
-        </h2>
-      </a>
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+      <img class="img-fluid" src="img/WhatsApp Image 2024-10-23 à 14.21.32_1d8ab823.jpg" alt="BIABIA MOTORS" style="max-height: 50px;"/>
+      <h2 class="m-0 text-primary" style=".navbar-brand {
+        display: flex;
+        align-items: center;
+      }
+      
+      .navbar-brand img {
+        max-height: 50px; /* Ajustez la hauteur selon vos besoins */
+        margin-right: 10px; /* Espace entre le logo et le texte */
+      }
+      
+      .navbar-brand h2 {
+        margin: 0;
+      }
+      ">BIABIA MOTORS</h2>
+    </a>
+    
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -553,12 +563,7 @@
                 service de qualité
               </h1>
               <p class="text-white mb-0">
-                Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd
-                ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo
-                rebum sea invidunt voluptua. Eos vero eos vero ea et dolore
-                eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores
-                magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus
-                sed.
+                Chez BIABIA Motors, nous nous engageons à offrir des services de qualité supérieure pour répondre à tous vos besoins automobiles. Notre équipe de professionnels expérimentés est dédiée à vous fournir une expérience exceptionnelle, que ce soit pour l’achat, l’entretien ou la réparation de votre véhicule.
               </p>
             </div>
           </div>
@@ -586,6 +591,22 @@
                       style="height: 55px"
                     />
                   </div>
+                  <div class="col-12 col-sm-6">
+                    <input
+                      type="phonenumber"
+                      id="phoneNumber"
+                      class="form-control border-0"
+                      placeholder="Your number"
+                      style="height: 55px"
+                    />
+                  </div>
+                  <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var phoneInput = document.getElementById("phoneNumber");
+                        phoneInput.value = "+241 ";
+                    });
+                </script>
+                
                   <div class="col-12 col-sm-6">
                     <select class="form-select border-0" style="height: 55px">
                       <option selected>Selectionez un Service</option>
@@ -645,7 +666,7 @@
                     ><i class="fab fa-facebook-f"></i
                   ></a>
                   <a class="btn btn-square mx-1" href=""
-                    ><i class="fab fa-twitter"></i
+                    ><i class="bi bi-tiktok"></i
                   ></a>
                   <a class="btn btn-square mx-1" href=""
                     ><i class="fab fa-whatsapp"></i
@@ -707,38 +728,21 @@
             <p>Developpeur Web</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-                amet diam et eos. Clita erat ipsum et lorem et sit.
+                “J’ai récemment vendu ma voiture par l’intermédiaire de Biabia Motors et le processus a été très simple et transparent. Ils ont trouvé un acheteur rapidement et m’ont aidé à obtenir un bon prix. Je suis très contente de leur service de vente et je les recommande sans hésitation.”
               </p>
             </div>
           </div>
           <div class="testimonial-item text-center">
             <img
               class="bg-light rounded-circle p-2 mx-auto mb-3"
-              
+              src="img/IMG_20240413_183517_654.JPG"
               style="width: 80px; height: 80px"
             />
             <h5 class="mb-0">Client Name</h5>
-            <p>Profession</p>
+            <p>Entrepreneur</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-                amet diam et eos. Clita erat ipsum et lorem et sit.
-              </p>
-            </div>
-          </div>
-          <div class="testimonial-item text-center">
-            <img
-              class="bg-light rounded-circle p-2 mx-auto mb-3"
-             
-              style="width: 80px; height: 80px"
-            />
-            <h5 class="mb-0">Client Name</h5>
-            <p>Profession</p>
-            <div class="testimonial-text bg-light text-center p-4">
-              <p class="mb-0">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-                amet diam et eos. Clita erat ipsum et lorem et sit.
+                “J’ai confié la gestion de ma flotte de véhicules à Biabia Motors et je suis très satisfait de leur service. Ils s’occupent de tout, de l’entretien à la gestion des documents, ce qui me permet de me concentrer sur mon entreprise. Leur équipe est toujours disponible et réactive.”
               </p>
             </div>
           </div>
@@ -749,11 +753,24 @@
               style="width: 80px; height: 80px"
             />
             <h5 class="mb-0">Client Name</h5>
-            <p>Profession</p>
+            <p>Policier</p>
             <div class="testimonial-text bg-light text-center p-4">
               <p class="mb-0">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-                amet diam et eos. Clita erat ipsum et lorem et sit.
+                “Biabia Motors m’a aidé à trouver et acheter la voiture de mes rêves. Leur équipe est très professionnelle et a pris le temps de comprendre mes besoins. Le service après-vente est également excellent, avec un suivi régulier pour s’assurer que tout va bien. Merci Biabia Motors !”
+              </p>
+            </div>
+          </div>
+          <div class="testimonial-item text-center">
+            <img
+              class="bg-light rounded-circle p-2 mx-auto mb-3"
+             
+              style="width: 80px; height: 80px"
+            />
+            <h5 class="mb-0">Client Name</h5>
+            <p>comptable</p>
+            <div class="testimonial-text bg-light text-center p-4">
+              <p class="mb-0">
+                “J’ai loué une voiture chez Biabia Motors pour un voyage d’affaires et l’expérience a été exceptionnelle. Le véhicule était en parfait état et le processus de location a été rapide et sans tracas. Je recommande vivement leurs services de location !”
               </p>
             </div>
           </div>
@@ -775,14 +792,14 @@
               <i class="fa fa-map-marker-alt me-3"></i>ancienne sobraga, Libreville, GABON
             </p>
             <p class="mb-2">
-              <i class="fa fa-phone-alt me-3"></i>+241 074951291
+              <i class="fa fa-phone-alt me-3"></i>+241 074638595
             </p>
             <p class="mb-2">
-              <i class="fa fa-envelope me-3"></i>assekoazareel@gmail.com
+              <i class="fa fa-envelope me-3"></i>meyekone@gmail.com
             </p>
             <div class="d-flex pt-2">
               <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-twitter"></i
+                ><i class="bi bi-tiktok"></i
               ></a>
               <a class="btn btn-outline-light btn-social" href=""
                 ><i class="fab fa-facebook-f"></i
@@ -791,7 +808,7 @@
                 ><i class="fab fa-youtube"></i
               ></a>
               <a class="btn btn-outline-light btn-social" href=""
-                ><i class="fab fa-linkedin-in"></i
+                ><i class="fab fa-whatsapp"></i
               ></a>
             </div>
           </div>
@@ -812,7 +829,7 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <h4 class="text-light mb-4">Newsletter</h4>
-            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+            <p>Enregistrez vous a notre newsletter pour ne rien rater.</p>
             <div class="position-relative mx-auto" style="max-width: 400px">
               <input
                 class="form-control border-0 w-100 py-3 ps-4 pe-5"
@@ -833,13 +850,9 @@
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">KIABI MOTOR</a>,pour toute vos reservation de voir
+              &copy; <a class="border-bottom" href="index.html">BIABIA MOTORS</a>,pour toute vos reservation et achat de voiture.
 
               <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-              Designed By
-              <a class="border-bottom" href=""
-                >AssMarket</a
-              >
             </div>
             <div class="col-md-6 text-center text-md-end">
               <div class="footer-menu">
