@@ -9,6 +9,14 @@
 .fw-medium {
   font-weight: 600 !important;
 }
+.card-img-top {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover !important;
+}
+.card {
+  margin-bottom: 20px;
+}
 
 .back-to-top {
   position: fixed;
@@ -382,6 +390,3 @@
 #otherImages img:hover {
   opacity: 1;
 }
-
-
-
