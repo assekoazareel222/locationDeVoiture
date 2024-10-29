@@ -10,7 +10,6 @@
     <!-- Favicon -->
     <link href="img/favicone.jpg" rel="icon" />
 
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,8 +47,14 @@
     <!-- Spinner Start -->
     <div
       id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center" b>
-      <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      b
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
         <span class="sr-only">Loading...</span>
       </div>
     </div>
@@ -74,11 +79,18 @@
             <small>+012 345 6789</small>
           </div>
           <div class="h-100 d-inline-flex align-items-center">
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
             <a class="btn btn-sm-square bg-white text-primary me-1" href=""
-              ><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a class="btn btn-sm-square bg-white text-primary me-1" href=""
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a class="btn btn-sm-square bg-white text-primary me-0" href=""
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
         </div>
       </div>
@@ -89,23 +101,37 @@
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
     >
-    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-      <img class="img-fluid" src="img/favicone.jpg" alt="BIABIA MOTORS" style="max-height: 50px;"/>
-      <h2 class="m-0 text-primary" style=".navbar-brand {
-        display: flex;
-        align-items: center;
-      }
-      
-      .navbar-brand img {
-        max-height: 50px; /* Ajustez la hauteur selon vos besoins */
-        margin-right: 10px; /* Espace entre le logo et le texte */
-      }
-      
-      .navbar-brand h2 {
-        margin: 0;
-      }
-      ">BIABIA MOTORS</h2>
-    </a>
+      <a
+        href="index.html"
+        class="navbar-brand d-flex align-items-center px-4 px-lg-5"
+      >
+        <img
+          class="img-fluid"
+          src="img/favicone.jpg"
+          alt="BIABIA MOTORS"
+          style="max-height: 50px"
+        />
+        <h2
+          class="m-0 text-primary"
+          style="
+            .navbar-brand {
+              display: flex;
+              align-items: center;
+            }
+
+            .navbar-brand img {
+              max-height: 50px; /* Ajustez la hauteur selon vos besoins */
+              margin-right: 10px; /* Espace entre le logo et le texte */
+            }
+
+            .navbar-brand h2 {
+              margin: 0;
+            }
+          "
+        >
+          BIABIA MOTORS
+        </h2>
+      </a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -117,7 +143,9 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
           <a href="index.html" class="nav-item nav-link">Acceuil</a>
-          <a href="location.html" class="nav-item nav-link">location de voiture</a>
+          <a href="location.html" class="nav-item nav-link"
+            >location de voiture</a
+          >
           <a href="Vente.html" class="nav-item nav-link">Vente de voiture</a>
           <a href="gestion.html" class="nav-item nav-link active"
             >gestion de voiture</a
@@ -163,15 +191,18 @@
           <h1 class="mb-5">Mettez votre véhicule en Gestion</h1>
         </div>
         <div class="row g-4">
-          <div class="col-12">
-            
-          </div>
+          <div class="col-12"></div>
           <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
             <div
               class="position-relative h-100 wow fadeIn"
               data-wow-delay="0.1s"
             >
-            <a href="img/jeune-homme-affaires-noir-attrayant-achete-nouvelle-voiture-il-tient-cles-dans-sa-main-reves-deviennent-realite-min-scaled-2560x1280.jpg" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+              <a
+                href="img/jeune-homme-affaires-noir-attrayant-achete-nouvelle-voiture-il-tient-cles-dans-sa-main-reves-deviennent-realite-min-scaled-2560x1280.jpg"
+                data-rel="prettyPhoto[gal]"
+                class="hoverbutton global-radius"
+                ><i class="flaticon-unlink"></i
+              ></a>
               <img
                 class="position-absolute img-fluid w-100 h-100"
                 src="img/jeune-homme-affaires-noir-attrayant-achete-nouvelle-voiture-il-tient-cles-dans-sa-main-reves-deviennent-realite-min-scaled-2560x1280.jpg"
@@ -195,9 +226,8 @@
                 The contact form is currently inactive. Get a functional and
                 working contact form with Ajax & PHP in a few minutes. Just copy
                 and paste the files, add a little code and you're done.
-                
               </p>
-              <form>
+              <form id="contactForm">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-floating">
@@ -271,10 +301,13 @@
                         type="file"
                         class="form-control"
                         id="image"
+                        name="image"
                         accept="image/*"
                         capture="camera"
                       />
-                      <label for="image">Ajouter une image ou prendre une photo</label>
+                      <label for="image"
+                        >Ajouter une image ou prendre une photo</label
+                      >
                     </div>
                   </div>
                   <div class="col-12">
@@ -415,5 +448,31 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#contactForm").submit(function (event) {
+          event.preventDefault(); // Empêche le rechargement de la page
+
+          // Créer un FormData pour gérer les données du formulaire, y compris les fichiers
+          var formData = new FormData(this);
+
+          $.ajax({
+            url: "https://my-project-i2o4.onrender.com/send-email", // URL de votre API
+            type: "POST",
+            data: formData,
+            processData: false, // Ne pas traiter les données
+            contentType: false, // Ne pas fixer de type de contenu, permet à jQuery de détecter le type
+            success: function (response) {
+              alert("Email envoyé avec succès !");
+              $("#contactForm")[0].reset();
+            },
+            error: function (xhr, status, error) {
+              console.error("Erreur:", error);
+              alert("Une erreur est survenue. Veuillez réessayer.");
+            },
+          });
+        });
+      });
+    </script>
   </body>
 </html>
