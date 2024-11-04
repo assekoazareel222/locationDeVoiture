@@ -99,6 +99,60 @@
     },
   });
 
+  $(document).ready(function () {
+    // Vérifiez si les données sont déjà dans le Local Storage
+    let voitures = localStorage.getItem("voituresData");
+
+    if (voitures) {
+      // Les données existent dans le Local Storage, les afficher directement
+      afficherVoitures(JSON.parse(voitures));
+    } else {
+      // Les données ne sont pas dans le Local Storage, les récupérer depuis le backend
+      $.ajax({
+        url: "https://my-project-i2o4.onrender.com/", // Remplacez par l'URL de votre API
+        method: "GET",
+        success: function (data) {
+          // Afficher les données
+          afficherVoitures(data);
+
+          // Stocker les données dans le Local Storage
+          localStorage.setItem("voituresData", JSON.stringify(data));
+        },
+        error: function (error) {
+          console.error("Erreur lors de la récupération des données:", error);
+        },
+      });
+    }
+  });
+
+  // Fonction pour afficher les données sur la page
+  function afficherVoitures(voitures) {
+    voitures.forEach(function (voiture) {
+      $("#voituresContainer").append(
+        ` <div class="col-md-4">
+        <div class="card">
+          <img
+            src="${voiture.image}"  // Utilise une image par défaut si aucune n'est fournie
+            class="card-img-top "
+            alt="${voiture.nom}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">${voiture.nom}</h5>
+            <p class="card-text">
+              Marque: ${voiture.nom}<br />
+              Boite de vitesse: ${voiture.boiteDeVitesse}<br />
+              Condition: ${voiture.condition}<br />
+              Consommation: ${voiture.consommation}<br />
+              Prix: ${voiture.prix} FCFA/jour
+            </p>
+            <a href="#" class="btn btn-primary">Réserver</a>
+          </div>
+        </div>
+      </div>`
+      );
+    });
+  }
+
   $.get("https://my-project-i2o4.onrender.com/", function (data) {
     console.log(data);
   }).fail(function (error) {
@@ -116,9 +170,7 @@
         <div class="col-md-4">
           <div class="card">
             <img
-              src="${
-                car.image || ""
-              }"  // Utilise une image par défaut si aucune n'est fournie
+              src="${car.image}"  // Utilise une image par défaut si aucune n'est fournie
               class="card-img-top "
               alt="${car.nom}"
             />
