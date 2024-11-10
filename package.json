@@ -19,5 +19,8 @@
     "url": "https://github.com/assekoazareel222/locationDeVoiture/issues"
   },
   "homepage": "https://github.com/assekoazareel222/locationDeVoiture#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^3.4.14"
+  }
 }

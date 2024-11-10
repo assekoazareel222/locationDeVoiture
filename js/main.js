@@ -237,4 +237,38 @@
       console.error("Erreur lors de la récupération des données:", error);
     });
   });
+  $(document).ready(function () {
+    // Fonction pour afficher le formulaire et flouter l'arrière-plan
+    function afficherFormulaire(voiture) {
+      // Remplissez les champs du formulaire avec les informations du véhicule
+      $("#validationCustom01").val(voiture.nom || "");
+      // Ajoutez d'autres champs à remplir si nécessaire
+  
+      // Afficher le formulaire et l'overlay
+      $(".custom-form").css("display", "flex"); // Utilisation de display: flex
+      $(".overlay").show();
+      $("body").addClass("blur-background");
+    }
+  
+    // Lorsque l'utilisateur clique sur "Réserver"
+    $(document).on("click", ".btn-primary", function (e) {
+      e.preventDefault();
+      // Récupérer les informations de la voiture à partir de l'élément parent
+      const voiture = {
+        nom: $(this).closest(".card").find(".card-title").text(),
+        // Récupérez d'autres informations si nécessaire
+      };
+  
+      // Afficher le formulaire avec les informations de la voiture
+      afficherFormulaire(voiture);
+    });
+  
+    // Cacher le formulaire et enlever le floutage
+    $(".overlay").click(function () {
+      $(".custom-form").css("display", "none"); // Cache le formulaire
+      $(".overlay").hide();
+      $("body").removeClass("blur-background");
+    });
+  });
+  
 })(jQuery);
