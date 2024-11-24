@@ -78,7 +78,43 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: 999;
       display: none;
+    } /* Message de confirmation */
+    .confirmation-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 30px;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      border-radius: 5px;
+      width: 60%;
+      max-width: 500px;
+      z-index: 2000; /* Assurez-vous que le message est au-dessus de l'overlay */
     }
+
+    .confirmation-message i {
+      font-size: 3em;
+      color: #28a745;
+    }
+
+    .confirmation-message button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .confirmation-message button:hover {
+      background-color: #0056b3;
+    }
+
   </style>
   
   <body>
@@ -212,196 +248,42 @@
     <div class="container-xxl py-5">
       <div class="container my-5">
         <div class="row">
-          <!-- <div class="col-md-4 mb-3">
-        <div class="card">
-          <a href="img/toyota land criser 2020.jfif" data-rel="prettyPhoto[gal]" class="card-img-top"><i class="flaticon-unlink"></i></a>
-          <img src="img/toyota land criser 2020.jfif" class="card-img-top" alt="Voiture 1" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 1</h5>
-            <p class="card-text">Marque: Toyota<br>Modèle: Corolla<br>Année: 2020<br>Prix: 5000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/toyota land criser 2020.jfif" class="card-img-top" alt="Voiture 2" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 2</h5>
-            <p class="card-text">Marque: Ford<br>Modèle: Focus<br>Année: 2019<br>Prix: 6000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/toyota land criser 2020.jfif" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/Hyundai Accent  année 2018 grise.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/Hyundai I30.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <d+iv class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/Hyundai sonata Cvvl sport rouge.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/Toyota Ch-r grise foncé.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture3.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture3.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Honda<br>Modèle: Civic<br>Année: 2021<br>Prix: 7000 FCFA/jour</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div> -->
-          <!-- <div class="col-md-4 mb-3">
-            <div class="card">
-              <img
-                src="img/voiture3.jpg"
-                class="card-img-top"
-                alt="Voiture 3"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 3</h5>
-                <p class="card-text">
-                  Marque: Honda<br />Modèle: Civic<br />Année: 2021<br />Prix:
-                  7000 FCFA/jour
-                </p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-5">
-            <div class="card">
-              <img
-                src="img/voiture3.jpg"
-                class="card-img-top"
-                alt="Voiture 3"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 3</h5>
-                <p class="card-text">
-                  Marque: Honda<br />Modèle: Civic<br />Année: 2021<br />Prix:
-                  7000 FCFA/jour
-                </p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div> -->
+      
           <div id="car-container" class="row"></div>
           <div class="overlay"></div> <!-- Overlay sombre -->
 
           <!-- Votre formulaire avec la classe custom-form -->
-          <form class="custom-form needs-validation " novalidate>
-            <div class="w-50">
-              <label for="validationCustom01" class="form-label">Nom du véhicule</label>
-              <input type="text" class="form-control" id="validationCustom01" value="" required>
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom02" class="form-label">votre nom</label>
-              <input type="text" class="form-control" id="validationCustom02" value="" required>
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom02" class="form-label">prenom</label>
-              <input type="text" class="form-control" id="" value="" required>
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom02" class="form-label">numero de telephone</label>
-              <input type="number" class="form-control" id="" value="" required>
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom02" class="form-label">numero WhatsApp</label>
-              <input type="number" class="form-control" id="" value="Otto" required>
-              <div class="valid-feedback">Looks good!</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustomUsername" class="form-label">Adresse mail</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">Please choose a username.</div>
-              </div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom03" class="form-label">adresse</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">Please provide a valid city.</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom04" class="form-label">couleur</label>
-              <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">noir</option>
-                <option>bleu</option>
-                <option>vert</option>
-                <option>jaune</option>
-              </select>
-              <div class="invalid-feedback">Please select a valid state.</div>
-            </div>
-            <div class="w-50">
-              <label for="validationCustom05" class="form-label">commentaire</label>
-              <input type="text" class="form-control" id="validationCustom05" required>
-              <div class="invalid-feedback">Please provide a valid zip.</div>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-              <label class="form-check-label" for="invalidCheck">Acceptez vous les termes et conditions</label>
-              <div class="invalid-feedback">You must agree before submitting.</div>
-            </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+          <form class="custom-form" id="voiture-form">
+            <label for="nomVoiture">Nom de la Voiture</label>
+            <input class="validationCustom01" type="text" id="nomVoiture" name="nomVoiture" required />
+          
+            <label for="nomClient">Nom du Client</label>
+            <input type="text" id="nomClient" name="nomClient" required />
+          
+            <label for="numeroTelephone">Numéro de Téléphone</label>
+            <input type="text" id="numeroTelephone" name="numeroTelephone" required />
+          
+            <label for="numeroWhatsapp">Numéro de Whatsapp</label>
+            <input type="text" id="numeroWhatsapp" name="numeroWhatsapp" required />
+          
+            <label for="adresseMail">Adresse Mail</label>
+            <input type="email" id="adresseMail" name="adresseMail" required />
+          
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required />
+          
+            <button type="submit">Envoyer</button>
           </form>
+          
+          <div class="confirmation-message" id="confirmation-message">
+            <i class="fas fa-check-circle"></i>
+            <p>Votre demande a été envoyée avec succès !</p>
+            <button id="continue-button">Continuer</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
           
         
         </div>
@@ -512,6 +394,56 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+      // Attacher l'événement de soumission du formulaire
+      $("#voiture-form").submit(function(e) {
+        e.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+    
+        // Récupérer les données du formulaire
+        const voitureData = {
+          nomVoiture: $("#nomVoiture").val(),
+          nomClient: $("#nomClient").val(),
+          numeroTelephone: $("#numeroTelephone").val(),
+          numeroWhatsapp: $("#numeroWhatsapp").val(),
+          adresseMail: $("#adresseMail").val(),
+          adresse: $("#adresse").val()
+        };
+    
+        // Envoi des données via AJAX
+        $.ajax({
+          url: 'http://localhost:3005/commande',  // Remplacez cette URL par l'URL de votre API
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(voitureData),  // Convertir les données en JSON
+          success: function(response) {
+            console.log('Données envoyées avec succès:', response);
+            // Vous pouvez afficher un message ou rediriger l'utilisateur après le succès
+          },
+          error: function(xhr, status, error) {
+            console.error('Erreur lors de l\'envoi:', error);
+            // Afficher un message d'erreur à l'utilisateur
+          }
+        });
+           // Simuler l'envoi de données et afficher le message de confirmation
+           console.log("Formulaire envoyé:", voitureData);
+    
+    // Afficher le message de confirmation
+    $("#confirmation-message").fadeIn();
+    $(".overlay").fadeIn(); // Afficher l'overlay
+    
+    // Masquer le formulaire
+    $(".custom-form").fadeOut();
+  });
+
+  // Lorsque le bouton "Continuer" est cliqué, réinitialiser le formulaire
+  $("#continue-button").click(function() {
+    $("#confirmation-message").fadeOut(); // Cacher le message de confirmation
+    $(".overlay").fadeOut(); // Cacher l'overlay
+    $("#voiture-form")[0].reset(); // Réinitialiser le formulaire
+});
+
+      
+    </script>
     <script>
    
     </script>

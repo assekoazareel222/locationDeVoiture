@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run dev"
+    "dev": "live-server --port=5502"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,11 @@
     "url": "https://github.com/assekoazareel222/locationDeVoiture/issues"
   },
   "homepage": "https://github.com/assekoazareel222/locationDeVoiture#readme",
-  "description": "",
   "dependencies": {
     "tailwindcss": "^3.4.14"
-  }
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "description": ""
 }

@@ -241,7 +241,7 @@
     // Fonction pour afficher le formulaire et flouter l'arrière-plan
     function afficherFormulaire(voiture) {
       // Remplissez les champs du formulaire avec les informations du véhicule
-      $("#validationCustom01").val(voiture.nom || "");
+      $(".validationCustom01").val(voiture.nom);
       // Ajoutez d'autres champs à remplir si nécessaire
   
       // Afficher le formulaire et l'overlay
