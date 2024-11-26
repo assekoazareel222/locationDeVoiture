@@ -211,28 +211,50 @@
                 working contact form with Ajax & PHP in a few minutes. Just copy
                 and paste the files, add a little code and you're done.
               </p>
-              <form id="voitureForm">
-                <label for="nom">Nom:</label>
-                <input type="text" id="nom" name="nom" required>
+              <form id="voitureForm"  class="bg-light p-4 rounded shadow-sm">
+
               
-                <label for="marque">Marque:</label>
-                <input type="text" id="marque" name="marque" required>
               
-                <label for="model">Modèle:</label>
-                <input type="text" id="model" name="model" required>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label class="form-label"  for="nom">Nom:</label>
+                   <input class="form-control" type="text" id="nom" name="nom" required>
               
-                <label for="annes">Année:</label>
-                <input type="text" id="annes" name="annes" required>
+                    </div>
+                    <div class="col-md-6">
+                       
+                   <label class="form-label"  for="marque">Marque:</label>
+                   <input  class="form-control" type="text" id="marque" name="marque" required>
+                    </div>
+                </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label  class="form-label" for="model">Modèle:</label>
+                  <input class="form-control" type="text" id="model" name="model" required>
               
-                <label for="kilometrage">Kilométrage:</label>
-                <input type="text" id="kilometrage" name="kilometrage" required>
-              
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-              
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image" accept="image/png, image/jpeg" required>
-              
+                    </div>
+                    <div class="col-md-6">
+
+                <label  class="form-label" for="annes">Année:</label>
+                <input class="form-control" type="text" id="annes" name="annes" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                <label class="form-label" for="kilometrage">Kilométrage:</label>
+                <input class="form-control" type="text" id="kilometrage" name="kilometrage" required>
+              </div>
+              <div class="mb-3">
+                <label  class="form-label" for="message">Message:</label>
+                <textarea  class="form-control" rows="4"   id="message" name="message"></textarea>
+              </div>
+                <div class="mb-3">
+                <label  class="form-label" for="image">Image:</label>
+                <input class="form-control" type="file" id="image" name="image" accept="image/png, image/jpeg" required>
+              </div>
                 <button type="submit">Envoyer</button>
               </form>
             </div>
@@ -325,13 +347,14 @@
         </div>
       </div>
     </div>
+ 
     <!-- Footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
       ><i class="bi bi-arrow-up"></i
     ></a>
-
+  </div>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -363,7 +386,7 @@
     formData.append('image', $('#image')[0].files[0]); // Ajouter l'image
 
     // Utilisation de fetch pour envoyer les données
-    fetch('http://localhost:3006/gestion', {
+    fetch('https://my-project-i2o4.onrender.com/gestion', {
       method: 'POST',
       body: formData,
     })
