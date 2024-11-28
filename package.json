@@ -1,13 +1,13 @@
 {
   "name": "locationdevoiture",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run dev"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/assekoazareel222/locationDeVoiture/issues"
   },
-  "homepage": "https://github.com/assekoazareel222/locationDeVoiture#readme"
+  "homepage": "https://github.com/assekoazareel222/locationDeVoiture#readme",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^3.4.14"
+  }
 }

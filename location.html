@@ -8,11 +8,10 @@
     <meta content="" name="description" />
 
     <!-- Favicon -->
-    <link href="img/WhatsApp Image 2024-10-23 à 14.21.32_1d8ab823.jpg" rel="icon" />
+    <link href="img/favicone.jpg" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap"
@@ -46,7 +45,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
     
   </head>
-
+  <style>
+    /* Formulaire masqué par défaut */
+    .custom-form {
+      display: none;
+      width: 50em;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 1em;
+      margin: auto;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      z-index: 1500;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+  
+    /* Arrière-plan flouté */
+    .blur-background {
+      background-color: rgba(54, 41, 41, 0.384);
+    }
+  
+    /* Overlay pour sombre l'arrière-plan */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      display: none;
+    }
+  </style>
+  
   <body>
     <!-- Spinner Start -->
     <div
@@ -90,7 +127,6 @@
             <a class="btn btn-sm-square bg-white text-primary me-1" href="https://wa.me/24104638595"
               ><i class="fab fa-whatsapp"></i
             ></a>
-            
           </div>
         </div>
       </div>
@@ -98,27 +134,11 @@
     <!-- Topbar End -->
 
     <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0"
-    >
-    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-      <img class="img-fluid" src="img/WhatsApp Image 2024-10-23 à 14.21.32_1d8ab823.jpg" alt="BIABIA MOTORS" style="max-height: 50px;"/>
-      <h2 class="m-0 text-primary" style=".navbar-brand {
-        display: flex;
-        align-items: center;
-      }
-      
-      .navbar-brand img {
-        max-height: 50px; /* Ajustez la hauteur selon vos besoins */
-        margin-right: 10px; /* Espace entre le logo et le texte */
-      }
-      
-      .navbar-brand h2 {
-        margin: 0;
-      }
-      ">BIABIA MOTORS</h2>
-    </a>
-    
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+      <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img class="img-fluid" src="img/logotop.png" alt="BIABIA MOTORS" style="max-height: 50px;"/>
+        <h2 class="m-0 text-primary">BIABIA MOTORS</h2>
+      </a>
       <button
         type="button"
         class="navbar-toggler me-4"
@@ -132,32 +152,24 @@
           <a href="index.html" class="nav-item nav-link">Acceuil</a>
           <a href="location.html" class="nav-item nav-link active">Location de voiture</a>
           <a href="Vente.html" class="nav-item nav-link">Vente de voiture</a>
-          <a href="gestion.html" class="nav-item nav-link">gestion de voiture</a>
+          <a href="gestion.html" class="nav-item nav-link">Gestion de voiture</a>
           <div class="nav-item dropdown">
-          
-          <a href="./contact.html" class="nav-item nav-link">Contact</a>
+            <a href="contact.html" class="nav-item nav-link">Contact</a>
+          </div>
         </div>
-        
       </div>
     </nav>
     <!-- Navbar End -->
 
     <!-- Page Header Start -->
-    <div
-      class="container-fluid page-header mb-5 p-0"
-      style="background-color: rgb(51, 51, 192)"
-    >
+    <div class="container-fluid page-header mb-5 p-0" style="background-color: rgb(51, 51, 192)">
       <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
-          <h1 class="display-3 text-white mb-3 animated slideInDown">
-            Service de Location
-          </h1>
+          <h1 class="display-3 text-white mb-3 animated slideInDown">Service de Location</h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center text-uppercase">
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-              <li class="breadcrumb-item text-white active" aria-current="page">
-                location
-              </li>
+              <li class="breadcrumb-item text-white active" aria-current="page">Location</li>
             </ol>
           </nav>
         </div>
@@ -165,190 +177,158 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- location Start -->
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="text-primary text-uppercase">// Contact Us //</h6>
-          <h1 class="mb-5">Nos Voitures à Louer</h1>
-        </div>
-          <div class="col-12">
-            <div class="row gy-4" style="justify-content: center;">
-              
-              <div class="col-md-4">
-                <div
-                  class="bg-light d-flex flex-column justify-content-center p-4"
-                >
-                  <h5 class="text-uppercase">// General //</h5>
-                  <p class="m-0">
-                    <i class="fa fa-envelope-open text-primary me-2"></i
-                    >meyekone@gmail.com
-                  </p>
-                </div>
-              </div>
-              
-            </div>
+    <!-- Location Start -->
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="text-primary text-uppercase">// Contact Us //</h6>
+      <h1 class="mb-5">Nos Voitures à Louer</h1>
+    </div>
+    <div class="col-12">
+      <div class="row gy-4" style="justify-content: center;">
+        <div class="col-md-4">
+          <div class="bg-light d-flex flex-column justify-content-center p-4">
+            <h5 class="text-uppercase">// General //</h5>
+            <p class="m-0">
+              <i class="fa fa-envelope-open text-primary me-2"></i>meyekone@gmail.com
+            </p>
           </div>
+        </div>
+      </div>
+    </div>
     <!-- Page Header End -->
 
-    <!-- location Start -->
-<div class="container-xxl py-5">
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture 1.jpg" class="card-img-top" alt="Voiture 1" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 1</h5>
-            <p class="card-text">Marque: KIA <br>Modèle: morning<br>boite: Automatique<br>Prix: 35.000 FCFA/jour<br>condition: 2j minimum</p>
-            <a href="forms/form_location/form_location.html " class="btn btn-primary">Réserver</a>
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/voiture 1.jpg" class="card-img-top" alt="Voiture 1" />
+              <div class="card-body">
+                <h5 class="card-title">Voiture 1</h5>
+                <p class="card-text">Marque: KIA <br>Modèle: Morning<br>Boite: Automatique<br>Prix: 35.000 FCFA/jour<br>Condition: 2j minimum</p>
+                <a href="forms/form_location/form_location.html" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture 2.jpg" class="card-img-top" alt="Voiture 2" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 2</h5>
-            <p class="card-text">Marque:  Hyundai<br>Modèle: Accent<br>boite: Automatique<br>Prix: 40.000 FCFA/jour<br>condition: 2j minimum</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/voiture 2.jpg" class="card-img-top" alt="Voiture 2" />
+              <div class="card-body">
+                <h5 class="card-title">Voiture 2</h5>
+                <p class="card-text">Marque: Hyundai<br>Modèle: Accent<br>Boite: Automatique<br>Prix: 40.000 FCFA/jour<br>Condition: 2j minimum</p>
+                <a href="#" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/Voiture 3.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 3</h5>
-            <p class="card-text">Marque: Hyundai<br>Modèle: I30<br>boite: Automatique<br>Prix: 35.000 FCFA/jour<br>condition: 2j minimum</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/voiture 3.jpg" class="card-img-top" alt="Voiture 3" />
+              <div class="card-body">
+                <h5 class="card-title">Voiture 3</h5>
+                <p class="card-text">Marque: Hyundai<br>Modèle: I30<br>Boite: Automatique<br>Prix: 35.000 FCFA/jour<br>Condition: 2j minimum</p>
+                <a href="#" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture 4.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 4</h5>
-            <p class="card-text">Marque: KIA <br>Modèle: sorento<br>boite: Automatique<br>Prix: 55.000 FCFA/jour<br>condition: 2j minimum</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/voiture 4.jpg" class="card-img-top" alt="Voiture 4" />
+              <div class="card-body">
+                <h5 class="card-title">Voiture 4</h5>
+                <p class="card-text">Marque: KIA <br>Modèle: Sorento<br>Boite: Automatique<br>Prix: 55.000 FCFA/jour<br>Condition: 2j minimum</p>
+                <a href="#" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture 5.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 5</h5>
-            <p class="card-text">Marque: CHR<br>Modèle: SUV<br>boite: Automatique<br>Prix: 60.000 FCFA/jour<br>condition: 2j minimum</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/voiture 5.jpg" class="card-img-top" alt="Voiture 5" />
+              <div class="card-body">
+                <h5 class="card-title">Voiture 5</h5>
+                <p class="card-text">Marque: CHR<br>Modèle: SUV<br>Boite: Automatique<br>Prix: 60.000 FCFA/jour<br>Condition: 2j minimum</p>
+                <a href="#" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="img/voiture 6.jpg" class="card-img-top" alt="Voiture 3" />
-          <div class="card-body">
-            <h5 class="card-title">Voiture 6</h5>
-            <p class="card-text">Marque: Marque: Toyota <br>Modèle: VX<br>boite: Automatique<br>Prix: 65.000 FCFA/jour<br>condition: 2j minimum</p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>  
-
-  
-
-  <!-- Footer Start -->
-  <div
-  class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
-  data-wow-delay="0.1s"
->
-  <div class="container py-5">
-    <div class="row g-5">
-      <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Address</h4>
-        <p class="mb-2">
-          <i class="fa fa-map-marker-alt me-3"></i>ancienne sobraga, Libreville, GABON
-        </p>
-        <p class="mb-2">
-          <i class="fa fa-phone-alt me-3"></i>+241 074638595
-        </p>
-        <p class="mb-2">
-          <i class="fa fa-envelope me-3"></i>meyekone@gmail.com
-        </p>
-        <div class="d-flex pt-2">
-          <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@biabiamotors0?_t=8qrKnoKG0ww&_r=1"
-            ><i class="bi bi-tiktok"></i
-          ></a>
-          <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61559776720323&mibextid=ZbWKwL"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a class="btn btn-outline-light btn-social" href="https://wa.me/24104638595"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Heure ouvrable</h4>
-        <h6 class="text-light">Lundi-Vendredi:</h6>
-        <p class="mb-4">09.00 AM - 09.00 PM</p>
-        <h6 class="text-light">Samedi-Dimanche:</h6>
-        <p class="mb-0">09.00 AM - 12.00 PM</p>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Services</h4>
-        <a class="btn btn-link" href="">Diagnostic Test</a>
-        <a class="btn btn-link" href="">Engine Servicing</a>
-        <a class="btn btn-link" href="">Tires Replacement</a>
-        <a class="btn btn-link" href="">Oil Changing</a>
-        <a class="btn btn-link" href="">Vacuam Cleaning</a>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <h4 class="text-light mb-4">Newsletter</h4>
-        <p>Enregistrez vous a notre newsletter pour ne rien rater.</p>
-        <div class="position-relative mx-auto" style="max-width: 400px">
-          <input
-            class="form-control border-0 w-100 py-3 ps-4 pe-5"
-            type="text"
-            placeholder="Your email"
-          />
-          <button
-            type="button"
-            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-          >
-            SignUp
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="copyright">
-      <div class="row">
-        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          &copy; <a class="border-bottom" href="index.html">BIABIA MOTORS</a>,pour toute vos reservation et achat de voiture.
-
-          <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <div class="footer-menu">
-            <a href="">Acceuil</a>
-            <a href="">Louer</a>
-            <a href="">Vente</a>
-            
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/voiture 6.jpg" class="card-img-top" alt="Voiture 6" />
+              <div class="card-body">
+                <h5 class="card-title">Voiture 6</h5>
+                <p class="card-text">Marque: Toyota <br>Modèle: VX<br>Boite: Automatique<br>Prix: 65.000 FCFA/jour<br>Condition: 2j minimum</p>
+                <a href="#" class="btn btn-primary">Réserver</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Footer End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Address</h4>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt me-3"></i>ancienne sobraga, Libreville, GABON
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-phone-alt me-3"></i>+241 074638595
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope me-3"></i>meyekone@gmail.com
+            </p>
+            <div class="d-flex pt-2">
+              <a class="btn btn-outline-light btn-social" href="https://www.tiktok.com/@biabiamotors0?_t=8qrKnoKG0ww&_r=1"><i class="bi bi-tiktok"></i></a>
+              <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=61559776720323&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-outline-light btn-social" href="https://wa.me/24104638595"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Heure ouvrable</h4>
+            <h6 class="text-light">Lundi-Vendredi:</h6>
+            <p class="mb-4">09.00 AM - 09.00 PM</p>
+            <h6 class="text-light">Samedi-Dimanche:</h6>
+            <p class="mb-0">09.00 AM - 12.00 PM</p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Services</h4>
+            <a class="btn btn-link" href="">Location de voitures</a>
+            <a class="btn btn-link" href="">Vente de voitures</a>
+            <a class="btn btn-link" href="">Gestion de véhicules</a>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h4 class="text-light mb-4">Newsletter</h4>
+            <p>Enregistrez-vous à notre newsletter pour ne rien rater.</p>
+            <div class="position-relative mx-auto" style="max-width: 400px">
+              <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
+              <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              &copy; <a class="border-bottom" href="index.html">BIABIA MOTORS</a>, pour toute vos réservation et achat de voiture.
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <a href="">Acceuil</a>
+                <a href="">Louer</a>
+                <a href="">Vente</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
-      ><i class="bi bi-arrow-up"></i
-    ></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -358,11 +338,5 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
