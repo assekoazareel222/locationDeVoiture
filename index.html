@@ -468,13 +468,14 @@
             >
               <h1 class="text-white mb-4">Service</h1>
               <!-- Formulaire HTML -->
+<!-- Formulaire HTML -->
 <form id="contact-form">
   <div class="row g-3">
       <div class="col-12 col-sm-6">
           <input
               type="text"
               class="form-control border-0"
-              placeholder="Your Name"
+              placeholder="Votre nom"
               style="height: 55px"
               name="user_name"
               required
@@ -484,7 +485,7 @@
           <input
               type="email"
               class="form-control border-0"
-              placeholder="Your Email"
+              placeholder="Votre Email"
               style="height: 55px"
               name="user_email"
               required
@@ -495,7 +496,7 @@
               type="tel"
               id="phoneNumber"
               class="form-control border-0"
-              placeholder="Your number"
+              placeholder="Votre numéro"
               style="height: 55px"
               name="user_phone"
               required
@@ -511,7 +512,7 @@
       <div class="col-12 col-sm-6">
           <select class="form-select border-0" style="height: 55px" name="service">
               <option selected>Selectionnez un Service</option>
-              <option value="location">location</option>
+              <option value="location">Location</option>
               <option value="achat">Achat</option>
               <option value="autres">Autres</option>
           </select>
@@ -533,7 +534,7 @@
       <div class="col-12">
           <textarea
               class="form-control border-0"
-              placeholder="Special Request"
+              placeholder="Demande spéciale"
               name="special_request"
           ></textarea>
       </div>
@@ -544,6 +545,30 @@
       </div>
   </div>
 </form>
+
+<!-- Script EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function(){
+      emailjs.init({
+        publicKey: "VezxcZ-Nl-XGJu_TM",
+      });
+   })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+
+        emailjs.sendForm('service_b9s2jkm', 'template_6hj7y1g', '#myForm').then(
+  (response) => {
+    console.log('SUCCÈS!', response.status, response.text);
+  },
+  (error) => {
+    console.log('ÉCHEC...', error);
+  },
+);
+    });
+</script>
+
 
 <!-- Script EmailJS -->
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
