@@ -467,75 +467,105 @@
               data-wow-delay="0.6s"
             >
               <h1 class="text-white mb-4">Service</h1>
-              <form>
-                <div class="row g-3">
-                  <div class="col-12 col-sm-6">
-                    <input
-                      type="text"
-                      class="form-control border-0"
-                      placeholder="Your Name"
-                      style="height: 55px"
-                    />
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <input
-                      type="email"
-                      class="form-control border-0"
-                      placeholder="Your Email"
-                      style="height: 55px"
-                    />
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <input
-                      type="phonenumber"
-                      id="phoneNumber"
-                      class="form-control border-0"
-                      placeholder="Your number"
-                      style="height: 55px"
-                    />
-                  </div>
-                  <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-                        var phoneInput = document.getElementById("phoneNumber");
-                        phoneInput.value = "+241 ";
-                    });
-                </script>
-                
-                  <div class="col-12 col-sm-6">
-                    <select class="form-select border-0" style="height: 55px">
-                      <option selected>Selectionez un Service</option>
-                      <option value="1">location</option>
-                      <option value="2">Achat</option>
-                      <option value="3">Autres
+              <!-- Formulaire HTML -->
+<form id="contact-form">
+  <div class="row g-3">
+      <div class="col-12 col-sm-6">
+          <input
+              type="text"
+              class="form-control border-0"
+              placeholder="Your Name"
+              style="height: 55px"
+              name="user_name"
+              required
+          />
+      </div>
+      <div class="col-12 col-sm-6">
+          <input
+              type="email"
+              class="form-control border-0"
+              placeholder="Your Email"
+              style="height: 55px"
+              name="user_email"
+              required
+          />
+      </div>
+      <div class="col-12 col-sm-6">
+          <input
+              type="tel"
+              id="phoneNumber"
+              class="form-control border-0"
+              placeholder="Your number"
+              style="height: 55px"
+              name="user_phone"
+              required
+          />
+      </div>
+      <script>
+          document.addEventListener("DOMContentLoaded", function() {
+              var phoneInput = document.getElementById("phoneNumber");
+              phoneInput.value = "+241 ";
+          });
+      </script>
+      
+      <div class="col-12 col-sm-6">
+          <select class="form-select border-0" style="height: 55px" name="service">
+              <option selected>Selectionnez un Service</option>
+              <option value="location">location</option>
+              <option value="achat">Achat</option>
+              <option value="autres">Autres</option>
+          </select>
+      </div>
+      <div class="col-12 col-sm-6">
+          <div class="date" id="date1" data-target-input="nearest">
+              <input
+                  type="text"
+                  class="form-control border-0 datetimepicker-input"
+                  placeholder="Date du Service"
+                  data-target="#date1"
+                  data-toggle="datetimepicker"
+                  style="height: 55px"
+                  name="service_date"
+                  required
+              />
+          </div>
+      </div>
+      <div class="col-12">
+          <textarea
+              class="form-control border-0"
+              placeholder="Special Request"
+              name="special_request"
+          ></textarea>
+      </div>
+      <div class="col-12">
+          <button class="btn btn-secondary w-100 py-3" type="submit">
+              Envoyer
+          </button>
+      </div>
+  </div>
+</form>
 
-                      </option>
-                    </select>
-                  </div>
-                  <div class="col-12 col-sm-6">
-                    <div class="date" id="date1" data-target-input="nearest">
-                      <input
-                        type="text"
-                        class="form-control border-0 datetimepicker-input"
-                        placeholder="Date du Service"
-                        data-target="#date1"
-                        data-toggle="datetimepicker"
-                        style="height: 55px"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <textarea
-                      class="form-control border-0"
-                      placeholder="Special Request"
-                    ></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-secondary w-100 py-3" type="submit">
-                      Envoyer
-                    </button>
-                  </div>
-                </div>
-              </form>
+<!-- Script EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+      emailjs.init("qqY03fIj6T7qrTzLn"); // Remplacez par votre User ID EmailJS
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_l0iboms', 'template_u17y4ig', '#myForm').then(
+  (response) => {
+    console.log('SUCCÈS!', response.status, response.text);
+  },
+  (error) => {
+    console.log('ÉCHEC...', error);
+  },
+);
+  });
+</script>
+
             </div>
           </div>
         </div>
