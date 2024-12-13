@@ -48,6 +48,7 @@
   <body>
     <!-- Spinner Start -->
     <div
+     
       id="spinner"
       class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
       b
@@ -211,106 +212,138 @@
               <p class="mb-4">
                 N'esitez plus! avec BIBIA MOTORS vous pouvez mettre votre véhicule en gestion et en toute sécurité
               </p>
+            
               <form id="contactForm">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Votre Nom"
-                      />
-                      <label for="name">Votre Nom</label>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="text"
+                                  class="form-control"
+                                  id="name"
+                                  name="user_name"
+                                  placeholder="Votre Nom"
+                                  required
+                              />
+                              <label for="name">Votre Nom</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="email"
+                                  class="form-control"
+                                  id="email"
+                                  name="user_email"
+                                  placeholder="Votre Email"
+                                  required
+                              />
+                              <label for="email">Votre Email</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="phoneNumber"
+                                name="user_phone"
+                                placeholder="Votre Numéro"
+                                required
+                            />
+                            <label for="phone">Votre numéro</label>
+                        </div>
+                      </div>
+                      <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            var phoneInput = document.getElementById("phoneNumber");
+                            phoneInput.value = "+241 ";
+                        });
+                     </script>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="text"
+                                  class="form-control"
+                                  id="brand"
+                                  name="user_brand"
+                                  placeholder="Marque"
+                                  required
+                              />
+                              <label for="brand">Marque</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="text"
+                                  class="form-control"
+                                  id="model"
+                                  name="user_model"
+                                  placeholder="Modèle"
+                                  required
+                              />
+                              <label for="model">Modèle</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="number"
+                                  class="form-control"
+                                  id="year"
+                                  name="user_year"
+                                  placeholder="Années"
+                                  required
+                              />
+                              <label for="year">Années</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="number"
+                                  class="form-control"
+                                  id="mileage"
+                                  name="user_mileage"
+                                  placeholder="Kilométrage"
+                                  required
+                              />
+                              <label for="mileage">Kilométrage</label>
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-floating">
+                              <input
+                                  type="file"
+                                  class="form-control"
+                                  id="image"
+                                  name="user_image"
+                                  accept="image/*"
+                                  capture="camera"
+                              />
+                              <label for="image">Ajouter une image ou prendre une photo</label>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <div class="form-floating">
+                              <textarea
+                                  class="form-control"
+                                  placeholder="Laissez un message ici"
+                                  id="message"
+                                  name="user_message"
+                                  style="height: 100px"
+                                  required
+                              ></textarea>
+                              <label for="message">Message</label>
+                          </div>
+                      </div>
+                      <div class="col-12">
+                          <button class="btn btn-primary w-100 py-3" type="submit">
+                              Envoyer
+                          </button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="Votre Email"
-                      />
-                      <label for="email">Votre Email</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="brand"
-                        placeholder="Marque"
-                      />
-                      <label for="brand">Marque</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="model"
-                        placeholder="Modèle"
-                      />
-                      <label for="model">Modèle</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="number"
-                        class="form-control"
-                        id="year"
-                        placeholder="Années"
-                      />
-                      <label for="mileage">Années</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="number"
-                        class="form-control"
-                        id="mileage"
-                        placeholder="Kilométrage"
-                      />
-                      <label for="mileage">Kilométrage</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="file"
-                        class="form-control"
-                        id="image"
-                        name="image"
-                        accept="image/*"
-                        capture="camera"
-                      />
-                      <label for="image"
-                        >Ajouter une image ou prendre une photo</label
-                      >
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Laissez un message ici"
-                        id="message"
-                        style="height: 100px"
-                      ></textarea>
-                      <label for="message">Message</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-primary w-100 py-3" type="submit">
-                      Envoyer
-                    </button>
-                  </div>
-                </div>
               </form>
             </div>
           </div>
@@ -393,8 +426,7 @@
             <div class="footer-menu">
               <a href="index.html">Acceuil</a>
               <a href="location.html">Louer</a>
-              <a href="Vente.html">Vente</a>
-              
+              <a href="Vente.html">Vente</a> 
             </div>
           </div>
         </div>
@@ -421,6 +453,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+  
     <script>
       $(document).ready(function () {
         $("#contactForm").submit(function (event) {
@@ -447,5 +480,6 @@
         });
       });
     </script>
+    
   </body>
 </html>

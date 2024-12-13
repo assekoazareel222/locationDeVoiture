@@ -172,70 +172,99 @@
               <p class="mb-4">
                 Pour toute vos questions ou préoccupations vous pouvez nous contacter directement via nos numéros au pied de page ou alors nous laisser un message. Pour des raisons de service de livraison d'un véhicule, veuillez nous communiquer l'itinéraire via la carte (View larger map) copiez le lien de votre emplacement et laissez-le en message.
               </p>
-              <form>
+              <form id="contactForm">
                 <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        placeholder="Your Name"
-                      />
-                      <label for="name">Your Name</label>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                name="user_name"
+                                placeholder="Your Name"
+                            />
+                            <label for="name">Your Name</label>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        placeholder="Your Email"
-                      />
-                      <label for="email">Your Email</label>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                name="user_email"
+                                placeholder="Your Email"
+                            />
+                            <label for="email">Your Email</label>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="phone"
-                        placeholder="Your Number"
-                      />
-                      <label for="number">Your number</label>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="phone"
+                                name="user_phone"
+                                placeholder="Your Number"
+                            />
+                            <label for="phone">Your Number</label>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="subject"
-                        placeholder="Subject"
-                      />
-                      <label for="subject">Subject</label>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="subject"
+                                name="user_subject"
+                                placeholder="Subject"
+                            />
+                            <label for="subject">Subject</label>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Leave a message here"
-                        id="message"
-                        style="height: 100px"
-                      ></textarea>
-                      <label for="message">Message</label>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea
+                                class="form-control"
+                                placeholder="Leave a message here"
+                                id="message"
+                                name="user_message"
+                                style="height: 100px"
+                            ></textarea>
+                            <label for="message">Message</label>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-primary w-100 py-3" type="submit">
-                      Send Message
-                    </button>
-                  </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">
+                            Send Message
+                        </button>
+                    </div>
                 </div>
-              </form>
+                <!-- Inclure la bibliothèque EmailJS -->
+                <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                <script>
+                    (function(){
+                        emailjs.init("QRLuUkfTsgdhWG48f"); // clé publique EmailJS
+                    })();
+            
+                    document.getElementById('contactForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+            
+                        emailjs.sendForm('service_qh6zoph', 'template_2rw5ch9', this).then(
+                            (response) => {
+                                console.log('SUCCÈS!', response.status, response.text);
+                                alert('Message envoyé avec succès !');
+                                this.reset(); // Réinitialise le formulaire après l'envoi
+                            },
+                            (error) => {
+                                console.log('ÉCHEC...', error);
+                                alert('Erreur lors de l\'envoi du message.');
+                            }
+                        );
+                    });
+                </script>
+            </form>
+            
             </div>
           </div>
         </div>
