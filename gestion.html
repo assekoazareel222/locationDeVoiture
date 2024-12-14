@@ -455,30 +455,41 @@
     <script src="js/main.js"></script>
   
     <script>
-      $(document).ready(function () {
-        $("#contactForm").submit(function (event) {
-          event.preventDefault(); // Empêche le rechargement de la page
+     
+     $(document).ready(function() {
+  $('#voitureForm').on('submit', function(e) {
+    e.preventDefault(); // Empêche le comportement par défaut du formulaire
 
-          // Créer un FormData pour gérer les données du formulaire, y compris les fichiers
-          var formData = new FormData(this);
+    // Récupérer les données du formulaire
+    var formData = new FormData();
+    formData.append('nom', $('#nom').val());
+    formData.append('marque', $('#marque').val());
+    formData.append('model', $('#model').val());
+    formData.append('annes', $('#annes').val());
+    formData.append('kilometrage', $('#kilometrage').val());
+    formData.append('message', $('#message').val());
+    formData.append('image', $('#image')[0].files[0]); // Ajouter l'image
 
-          $.ajax({
-            url: "https://my-project-i2o4.onrender.com/send-email", // URL de votre API
-            type: "POST",
-            data: formData,
-            processData: false, // Ne pas traiter les données
-            contentType: false, // Ne pas fixer de type de contenu, permet à jQuery de détecter le type
-            success: function (response) {
-              alert("Email envoyé avec succès !");
-              $("#contactForm")[0].reset();
-            },
-            error: function (xhr, status, error) {
-              console.error("Erreur:", error);
-              alert("Une erreur est survenue. Veuillez réessayer.");
-            },
-          });
-        });
-      });
+    // Utilisation de fetch pour envoyer les données
+    fetch('http://localhost:3006/gestion', {
+      method: 'POST',
+      body: formData,
+    })
+    .then(response => response.json())  // On suppose que l'API retourne une réponse JSON
+    .then(data => {
+      if (data.message === 'Voiture ajoutée avec succès') {
+        alert('Voiture ajoutée avec succès');
+        // Vous pouvez effectuer d'autres actions ici, comme réinitialiser le formulaire ou rediriger.
+      } else {
+        alert('Erreur lors de l\'ajout de la voiture');
+      }
+    })
+    .catch(error => {
+      console.error('Erreur:', error);
+      alert('Une erreur est survenue');
+    });
+  });
+});
     </script>
     
   </body>

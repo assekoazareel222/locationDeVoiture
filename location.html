@@ -80,7 +80,43 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: 999;
       display: none;
+    } /* Message de confirmation */
+    .confirmation-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 30px;
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      border-radius: 5px;
+      width: 60%;
+      max-width: 500px;
+      z-index: 2000; /* Assurez-vous que le message est au-dessus de l'overlay */
     }
+
+    .confirmation-message i {
+      font-size: 3em;
+      color: #28a745;
+    }
+
+    .confirmation-message button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .confirmation-message button:hover {
+      background-color: #0056b3;
+    }
+
   </style>
   
   <body>
@@ -199,66 +235,44 @@
     <div class="container-xxl py-5">
       <div class="container my-5">
         <div class="row">
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/voiture 1.jpg" class="card-img-top" alt="Voiture 1" />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 1</h5>
-                <p class="card-text">Marque: KIA <br>Modèle: Morning<br>Boite: Automatique<br>Prix: 35.000 FCFA/jour<br>Condition: 2j minimum</p>
-                <a href="forms/form_location/form_location.html" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
+      
+          <div id="car-container" class="row"></div>
+          <div class="overlay"></div> <!-- Overlay sombre -->
+
+          <!-- Votre formulaire avec la classe custom-form -->
+          <form class="custom-form" id="voiture-form">
+            <label for="nomVoiture">Nom de la Voiture</label>
+            <input class="validationCustom01" type="text" id="nomVoiture" name="nomVoiture" required />
+          
+            <label for="nomClient">Nom du Client</label>
+            <input type="text" id="nomClient" name="nomClient" required />
+          
+            <label for="numeroTelephone">Numéro de Téléphone</label>
+            <input type="text" id="numeroTelephone" name="numeroTelephone" required />
+          
+            <label for="numeroWhatsapp">Numéro de Whatsapp</label>
+            <input type="text" id="numeroWhatsapp" name="numeroWhatsapp" required />
+          
+            <label for="adresseMail">Adresse Mail</label>
+            <input type="email" id="adresseMail" name="adresseMail" required />
+          
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required />
+          
+            <button type="submit">Envoyer</button>
+          </form>
+          
+          <div class="confirmation-message" id="confirmation-message">
+            <i class="fas fa-check-circle"></i>
+            <p>Votre demande a été envoyée avec succès !</p>
+            <button id="continue-button">Continuer</button>
           </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/voiture 2.jpg" class="card-img-top" alt="Voiture 2" />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 2</h5>
-                <p class="card-text">Marque: Hyundai<br>Modèle: Accent<br>Boite: Automatique<br>Prix: 40.000 FCFA/jour<br>Condition: 2j minimum</p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/voiture 3.jpg" class="card-img-top" alt="Voiture 3" />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 3</h5>
-                <p class="card-text">Marque: Hyundai<br>Modèle: I30<br>Boite: Automatique<br>Prix: 35.000 FCFA/jour<br>Condition: 2j minimum</p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/voiture 4.jpg" class="card-img-top" alt="Voiture 4" />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 4</h5>
-                <p class="card-text">Marque: KIA <br>Modèle: Sorento<br>Boite: Automatique<br>Prix: 55.000 FCFA/jour<br>Condition: 2j minimum</p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/voiture 5.jpg" class="card-img-top" alt="Voiture 5" />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 5</h5>
-                <p class="card-text">Marque: CHR<br>Modèle: SUV<br>Boite: Automatique<br>Prix: 60.000 FCFA/jour<br>Condition: 2j minimum</p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/voiture 6.jpg" class="card-img-top" alt="Voiture 6" />
-              <div class="card-body">
-                <h5 class="card-title">Voiture 6</h5>
-                <p class="card-text">Marque: Toyota <br>Modèle: VX<br>Boite: Automatique<br>Prix: 65.000 FCFA/jour<br>Condition: 2j minimum</p>
-                <a href="#" class="btn btn-primary">Réserver</a>
-              </div>
-            </div>
-          </div>
+
+        </div>
+      </div>
+    </div>
+          
+        
         </div>
       </div>
     </div>
@@ -337,5 +351,64 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script>
+      // Attacher l'événement de soumission du formulaire
+      $("#voiture-form").submit(function(e) {
+        e.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+    
+        // Récupérer les données du formulaire
+        const voitureData = {
+          nomVoiture: $("#nomVoiture").val(),
+          nomClient: $("#nomClient").val(),
+          numeroTelephone: $("#numeroTelephone").val(),
+          numeroWhatsapp: $("#numeroWhatsapp").val(),
+          adresseMail: $("#adresseMail").val(),
+          adresse: $("#adresse").val()
+        };
+    
+        // Envoi des données via AJAX
+        $.ajax({
+          url: 'http://localhost:3005/commande',  // Remplacez cette URL par l'URL de votre API
+          type: 'POST',
+          contentType: 'application/json',
+          data: JSON.stringify(voitureData),  // Convertir les données en JSON
+          success: function(response) {
+            console.log('Données envoyées avec succès:', response);
+            // Vous pouvez afficher un message ou rediriger l'utilisateur après le succès
+          },
+          error: function(xhr, status, error) {
+            console.error('Erreur lors de l\'envoi:', error);
+            // Afficher un message d'erreur à l'utilisateur
+          }
+        });
+           // Simuler l'envoi de données et afficher le message de confirmation
+           console.log("Formulaire envoyé:", voitureData);
+    
+    // Afficher le message de confirmation
+    $("#confirmation-message").fadeIn();
+    $(".overlay").fadeIn(); // Afficher l'overlay
+    
+    // Masquer le formulaire
+    $(".custom-form").fadeOut();
+  });
+
+  // Lorsque le bouton "Continuer" est cliqué, réinitialiser le formulaire
+  $("#continue-button").click(function() {
+    $("#confirmation-message").fadeOut(); // Cacher le message de confirmation
+    $(".overlay").fadeOut(); // Cacher l'overlay
+    $("#voiture-form")[0].reset(); // Réinitialiser le formulaire
+});
+
+      
+    </script>
+    <script>
+   
+    </script>
   </body>
 </html>
