@@ -196,7 +196,7 @@
             <a class="btn btn-sm-square bg-white text-primary me-1" href="https://wa.me/24104638595"
               ><i class="fab fa-whatsapp"></i
             ></a>
--+            
+         
           </div>
         </div>
       </div>
@@ -241,7 +241,7 @@
           <a href="location.html" class="nav-item nav-link "
             >location de voiture</a
           >
-          <a href="Vente.html" class="nav-item nav-link active">Vente de voiture</a>
+          <a href="Vente.html" class="nav-item nav-link active">Vente de véhicule</a>
           <a href="gestion.html" class="nav-item nav-link"
             >gestion de voiture</a
           >
@@ -261,7 +261,7 @@
       <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
           <h1 class="display-3 text-white mb-3 animated slideInDown">
-            ente de véhicule
+            Vente de véhicule
           </h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center text-uppercase">
@@ -431,8 +431,8 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-      // Attacher l'événement de soumission du formulaire
-      $("#voiture-form").submit(function(e) {
+       // Attacher l'événement de soumission du formulaire
+       $("#voiture-form").submit(function(e) {
         e.preventDefault(); // Empêcher l'envoi du formulaire par défaut
     
         // Récupérer les données du formulaire
@@ -447,7 +447,7 @@
     
         // Envoi des données via AJAX
         $.ajax({
-          url: 'http://localhost:3005/commandevente',  // Remplacez cette URL par l'URL de votre API
+          url: 'https://my-project-i2o4.onrender.com/commandevente',  // Remplacez cette URL par l'URL de votre API
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify(voitureData),  // Convertir les données en JSON
@@ -477,7 +477,6 @@
     $(".overlay").fadeOut(); // Cacher l'overlay
     $("#voiture-form")[0].reset(); // Réinitialiser le formulaire
 });
-
       
     </script>
     <script>

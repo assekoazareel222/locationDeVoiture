@@ -162,6 +162,7 @@
             <a class="btn btn-sm-square bg-white text-primary me-1" href="https://wa.me/24104638595"
               ><i class="fab fa-whatsapp"></i
             ></a>
+        
           </div>
         </div>
       </div>
@@ -374,7 +375,7 @@
     
         // Envoi des données via AJAX
         $.ajax({
-          url: 'http://localhost:3005/commande',  // Remplacez cette URL par l'URL de votre API
+          url: 'https://my-project-i2o4.onrender.com/commande',  // Remplacez cette URL par l'URL de votre API
           type: 'POST',
           contentType: 'application/json',
           data: JSON.stringify(voitureData),  // Convertir les données en JSON
