@@ -233,48 +233,72 @@
     <!-- Page Header End -->
 
     <!-- Contact Start -->
-    <div class="container-xxl py-5">
-      <div class="container my-5">
-        <div class="row">
-      
-          <div id="car-container" class="row"></div>
-          <div class="overlay"></div> <!-- Overlay sombre -->
-
-          <!-- Votre formulaire avec la classe custom-form -->
-          <form class="custom-form" id="voiture-form">
-            <label for="nomVoiture">Nom de la Voiture</label>
-            <input class="validationCustom01" type="text" id="nomVoiture" name="nomVoiture" required />
-          
-            <label for="nomClient">Nom du Client</label>
-            <input type="text" id="nomClient" name="nomClient" required />
-          
-            <label for="numeroTelephone">Numéro de Téléphone</label>
-            <input type="text" id="numeroTelephone" name="numeroTelephone" required />
-          
-            <label for="numeroWhatsapp">Numéro de Whatsapp</label>
-            <input type="text" id="numeroWhatsapp" name="numeroWhatsapp" required />
-          
-            <label for="adresseMail">Adresse Mail</label>
-            <input type="email" id="adresseMail" name="adresseMail" required />
-          
-            <label for="adresse">Adresse</label>
-            <input type="text" id="adresse" name="adresse" required />
-          
-            <button type="submit">Envoyer</button>
-          </form>
-          
-          <div class="confirmation-message" id="confirmation-message">
-            <i class="fas fa-check-circle"></i>
-            <p>Votre demande a été envoyée avec succès !</p>
-            <button id="continue-button">Continuer</button>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-4 mb-3"></div>
+        <div id="car-container" class="row"></div>
+        <div class="overlay"></div> 
+        <form class="custom-form needs-validation " novalidate>
+          <div class="w-50">
+            <label for="validationCustom01" class="form-label">Nom du véhicule</label>
+            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <div class="valid-feedback">Looks good!</div>
           </div>
-
-        </div>
-      </div>
-    </div>
-          
-        
-        </div>
+          <div class="w-50">
+            <label for="validationCustom02" class="form-label">votre nom</label>
+            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustom02" class="form-label">prenom</label>
+            <input type="text" class="form-control" id="" value="" required>
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustom02" class="form-label">numero de telephone</label>
+            <input type="number" class="form-control" id="" value="" required>
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustom02" class="form-label">numero WhatsApp</label>
+            <input type="number" class="form-control" id="" value="Otto" required>
+            <div class="valid-feedback">Looks good!</div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustomUsername" class="form-label">Adresse mail</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">Please choose a username.</div>
+            </div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustom03" class="form-label">adresse</label>
+            <input type="text" class="form-control" id="validationCustom03" required>
+            <div class="invalid-feedback">Please provide a valid city.</div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustom04" class="form-label">couleur</label>
+            <select class="form-select" id="validationCustom04" required>
+              <option selected disabled value="">noir</option>
+              <option>bleu</option>
+              <option>vert</option>
+              <option>jaune</option>
+            </select>
+            <div class="invalid-feedback">Please select a valid state.</div>
+          </div>
+          <div class="w-50">
+            <label for="validationCustom05" class="form-label">commentaire</label>
+            <input type="text" class="form-control" id="validationCustom05" required>
+            <div class="invalid-feedback">Please provide a valid zip.</div>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">Acceptez vous les termes et conditions</label>
+            <div class="invalid-feedback">You must agree before submitting.</div>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
       </div>
     </div>
 

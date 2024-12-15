@@ -126,33 +126,7 @@
   });
 
   // Fonction pour afficher les données sur la page
-  function afficherVoitures(voitures) {
-    voitures.forEach(function (voiture) {
-      $("#voituresContainer").append(
-        ` <div class="col-md-4">
-        <div class="card">
-          <img
-            src="${voiture.image}"  // Utilise une image par défaut si aucune n'est fournie
-            class="card-img-top "
-            alt="${voiture.nom}"
-          />
-          <div class="card-body">
-            <h5 class="card-title">${voiture.nom}</h5>
-            <p class="card-text">
-              Marque: ${voiture.nom}<br />
-              Boite de vitesse: ${voiture.boiteDeVitesse}<br />
-              Condition: ${voiture.condition}<br />
-              Consommation: ${voiture.consommation}<br />
-              Prix: ${voiture.prix} FCFA/jour
-            </p>
-            <a href="#" class="btn btn-primary">Réserver</a>
-          </div>
-        </div>
-      </div>`
-      );
-    });
-  }
-
+ 
   $.get("https://my-project-i2o4.onrender.com/", function (data) {
     console.log(data);
   }).fail(function (error) {

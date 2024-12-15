@@ -200,7 +200,7 @@
 
 /*** Facts ***/
 .fact {
-  background-color: rgb(24, 127, 224);
+  background-color: #0b2154;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -213,7 +213,7 @@
 }
 
 .service .nav .nav-link.active {
-  background: var(--primary);
+  background: #0b2154;
 }
 
 .service .nav .nav-link.active h4 {
