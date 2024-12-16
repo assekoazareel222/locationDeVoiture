@@ -238,43 +238,39 @@
         <div class="col-md-4 mb-3"></div>
         <div id="car-container" class="row"></div>
         <div class="overlay"></div> 
-        <form class="custom-form needs-validation " novalidate>
+        <form class="custom-form needs-validation " id="voiture-form" novalidate>
           <div class="w-50">
             <label for="validationCustom01" class="form-label">Nom du véhicule</label>
-            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <input type="text" class="form-control" id="nomVoiture" value="" required>
             <div class="valid-feedback">Looks good!</div>
           </div>
           <div class="w-50">
-            <label for="validationCustom02" class="form-label">votre nom</label>
-            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <label for="validationCustom02" class="form-label">votre nom complet</label>
+            <input type="text" class="form-control" id="nomClient" value="" required>
             <div class="valid-feedback">Looks good!</div>
           </div>
-          <div class="w-50">
-            <label for="validationCustom02" class="form-label">prenom</label>
-            <input type="text" class="form-control" id="" value="" required>
-            <div class="valid-feedback">Looks good!</div>
-          </div>
+          
           <div class="w-50">
             <label for="validationCustom02" class="form-label">numero de telephone</label>
-            <input type="number" class="form-control" id="" value="" required>
+            <input type="number" class="form-control" id="numeroTelephone" value="" required>
             <div class="valid-feedback">Looks good!</div>
           </div>
           <div class="w-50">
             <label for="validationCustom02" class="form-label">numero WhatsApp</label>
-            <input type="number" class="form-control" id="" value="Otto" required>
+            <input type="number" class="form-control" id="numeroWhatsapp" value="Otto" required>
             <div class="valid-feedback">Looks good!</div>
           </div>
           <div class="w-50">
             <label for="validationCustomUsername" class="form-label">Adresse mail</label>
             <div class="input-group has-validation">
               <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+              <input type="email" class="form-control" id="adresseMail" aria-describedby="inputGroupPrepend" required>
               <div class="invalid-feedback">Please choose a username.</div>
             </div>
           </div>
           <div class="w-50">
             <label for="validationCustom03" class="form-label">adresse</label>
-            <input type="text" class="form-control" id="validationCustom03" required>
+            <input type="text" class="form-control" id="adresse" required>
             <div class="invalid-feedback">Please provide a valid city.</div>
           </div>
           <div class="w-50">
@@ -297,8 +293,14 @@
             <label class="form-check-label" for="invalidCheck">Acceptez vous les termes et conditions</label>
             <div class="invalid-feedback">You must agree before submitting.</div>
           </div>
-          <button class="btn btn-primary" type="submit">Submit form</button>
+          <button class="btn text-primary" type="submit">Submit form</button>
         </form>
+
+        <div class="confirmation-message" id="confirmation-message">
+          <i class="fas fa-check-circle"></i>
+          <p>Votre demande a été envoyée avec succès !</p>
+          <button id="continue-button">Continuer</button>
+        </div>
       </div>
     </div>
 
@@ -386,51 +388,58 @@
       // Attacher l'événement de soumission du formulaire
       $("#voiture-form").submit(function(e) {
         e.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+        
+        // Vérifier si le formulaire est valide
+        if ($("#voiture-form")[0].checkValidity()) {
+          // Si le formulaire est valide, récupérer les données
+          const voitureData = {
+            nomVoiture: $("#nomVoiture").val(),
+            nomClient: $("#nomClient").val(),
+            numeroTelephone: $("#numeroTelephone").val(),
+            numeroWhatsapp: $("#numeroWhatsapp").val(),
+            adresseMail: $("#adresseMail").val(),
+            adresse: $("#adresse").val(),
+            couleur: $("#validationCustom04").val(),
+            commentaire: $("#validationCustom05").val()
+          };
+          
+          // Envoi des données via AJAX
+          $.ajax({
+            url: 'https://my-project-i2o4.onrender.com/commande',  // Remplacez cette URL par l'URL de votre API
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(voitureData),  // Convertir les données en JSON
+            success: function(response) {
+              console.log('Données envoyées avec succès:', response);
+              // Vous pouvez afficher un message ou rediriger l'utilisateur après le succès
+            },
+            error: function(xhr, status, error) {
+              console.error('Erreur lors de l\'envoi:', error);
+              // Afficher un message d'erreur à l'utilisateur
+            }
+          });
+          
+          // Simuler l'envoi de données et afficher le message de confirmation
+          console.log("Formulaire envoyé:", voitureData);
     
-        // Récupérer les données du formulaire
-        const voitureData = {
-          nomVoiture: $("#nomVoiture").val(),
-          nomClient: $("#nomClient").val(),
-          numeroTelephone: $("#numeroTelephone").val(),
-          numeroWhatsapp: $("#numeroWhatsapp").val(),
-          adresseMail: $("#adresseMail").val(),
-          adresse: $("#adresse").val()
-        };
+          // Afficher le message de confirmation
+          $("#confirmation-message").fadeIn();
+          $(".overlay").fadeIn(); // Afficher l'overlay
     
-        // Envoi des données via AJAX
-        $.ajax({
-          url: 'https://my-project-i2o4.onrender.com/commande',  // Remplacez cette URL par l'URL de votre API
-          type: 'POST',
-          contentType: 'application/json',
-          data: JSON.stringify(voitureData),  // Convertir les données en JSON
-          success: function(response) {
-            console.log('Données envoyées avec succès:', response);
-            // Vous pouvez afficher un message ou rediriger l'utilisateur après le succès
-          },
-          error: function(xhr, status, error) {
-            console.error('Erreur lors de l\'envoi:', error);
-            // Afficher un message d'erreur à l'utilisateur
-          }
-        });
-           // Simuler l'envoi de données et afficher le message de confirmation
-           console.log("Formulaire envoyé:", voitureData);
+          // Masquer le formulaire
+          $(".custom-form").fadeOut();
+        } else {
+          // Si le formulaire n'est pas valide, afficher un message d'erreur ou indiquer la non-validité
+          $(".invalid-feedback").fadeIn();
+        }
+      });
     
-    // Afficher le message de confirmation
-    $("#confirmation-message").fadeIn();
-    $(".overlay").fadeIn(); // Afficher l'overlay
-    
-    // Masquer le formulaire
-    $(".custom-form").fadeOut();
-  });
-
-  // Lorsque le bouton "Continuer" est cliqué, réinitialiser le formulaire
-  $("#continue-button").click(function() {
-    $("#confirmation-message").fadeOut(); // Cacher le message de confirmation
-    $(".overlay").fadeOut(); // Cacher l'overlay
-    $("#voiture-form")[0].reset(); // Réinitialiser le formulaire
-});
-
-      
+      // Lorsque le bouton "Continuer" est cliqué, réinitialiser le formulaire
+      $("#continue-button").click(function() {
+        $("#confirmation-message").fadeOut(); // Cacher le message de confirmation
+        $(".overlay").fadeOut(); // Cacher l'overlay
+        $("#voiture-form")[0].reset(); // Réinitialiser le formulaire
+      });
     </script>
     <script>
    
