@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,7 +43,6 @@
     <link href="css/style.css" rel="stylesheet" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="scss/bootstrap.scss">
   </head>
 
   <body>
@@ -174,7 +172,7 @@
               <p class="mb-4">
                 Pour toute vos questions ou préoccupations vous pouvez nous contacter directement via nos numéros au pied de page ou alors nous laisser un message. Pour des raisons de service de livraison d'un véhicule, veuillez nous communiquer l'itinéraire via la carte (View larger map) copiez le lien de votre emplacement et laissez-le en message.
               </p>
-              <form id="contact-Form">
+              <form id="contactForm">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <div class="form-floating">
@@ -206,14 +204,13 @@
                         <div class="form-floating">
                             <input
                                 type="tel"
-                                id="phoneNumber"
                                 class="form-control"
-                                placeholder="Votre numéro"
-                                style="height: 55px"
+                                id="phone"
                                 name="user_phone"
+                                placeholder="Your Number"
                                 required
                             />
-                          <label for="phone">Your Number</label>
+                            <label for="phone">Your Number</label>
                         </div>
                     </div>
                     <div class="col-12">
@@ -237,7 +234,6 @@
                                 id="message"
                                 name="user_message"
                                 style="height: 100px"
-                                required
                             ></textarea>
                             <label for="message">Message</label>
                         </div>
@@ -248,31 +244,31 @@
                         </button>
                     </div>
                 </div>
+                <!-- Inclure la bibliothèque EmailJS -->
+                <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+                <script>
+                    (function(){
+                        emailjs.init("QRLuUkfTsgdhWG48f"); // clé publique EmailJS
+                    })();
+            
+                    document.getElementById('contactForm').addEventListener('submit', function(event) {
+                        event.preventDefault(); // Empêche l'envoi par défaut du formulaire
+            
+                        emailjs.sendForm('service_qh6zoph', 'template_2rw5ch9', this).then(
+                            (response) => {
+                                console.log('SUCCÈS!', response.status, response.text);
+                                alert('Message envoyé avec succès !');
+                                this.reset(); // Réinitialise le formulaire après l'envoi
+                            },
+                            (error) => {
+                                console.log('ÉCHEC...', error);
+                                alert('Erreur lors de l\'envoi du message.');
+                            }
+                        );
+                    });
+                </script>
             </form>
             
-            <!-- Inclure la bibliothèque EmailJS -->
-            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-            <script>
-                (function(){
-                    emailjs.init("QRLuUkfTsgdhWG48f"); // Clé publique EmailJS
-                })();
-            
-                document.getElementById('contact-Form').addEventListener('submit', function(event) {
-                    event.preventDefault(); // Empêche l'envoi par défaut du formulaire
-            
-                    emailjs.sendForm("service_qh6zoph","template_2rw5ch9", this).then(
-                        (response) => {
-                            console.log('SUCCÈS!', response.status, response.text);
-                            alert('Message envoyé avec succès !'); // Message de confirmation
-                            this.reset(); // Réinitialise le formulaire après l'envoi
-                        },
-                        (error) => {
-                            console.log('ÉCHEC...', error);
-                            alert('Erreur lors de l\'envoi du message.');
-                        }
-                    );
-                });
-            </script>
             </div>
           </div>
         </div>
