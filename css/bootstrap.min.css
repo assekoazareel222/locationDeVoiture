@@ -203,8 +203,9 @@ sup {
   top: -0.5em;
 }
 a {
-  color: #3113d8;
+  color: #0300aa;
   text-decoration: none;
+  
 }
 a:hover {
   color: #335188;
@@ -302,7 +303,7 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: large;
   line-height: inherit;
 }
 button,
@@ -327,11 +328,11 @@ button,
 [type="submit"] {
     -webkit-appearance: button; /* Rendre le bouton comme un bouton standard */
     appearance: button; /* Support pour d'autres navigateurs */
-    background-color: #007bff; /* Couleur de fond du bouton */
+    background-color: #354edc; /* Couleur de fond du bouton */
     color: white; /* Couleur du texte */
     border: 2px solid #007bff; /* Bordure du bouton */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 10px 20px; /* Espacement interne */
+    border-radius: 0px; /* Coins arrondis */
+    padding: 16px 48px; /* Espacement interne */
     cursor: pointer; /* Curseur en main */
     transition: background-color 0.3s; /* Transition douce */
 }
@@ -388,17 +389,17 @@ legend + * {
   height: auto;
 }
 [type="search"] {
-  outline-offset: 0; /* Utilisez une valeur nulle ou positive */
-  -webkit-appearance: textfield; /* Apparence de champ de texte */
-  border: 1px solid #ccc; /* Bordure personnalisée */
-  padding: 10px; /* Espacement interne */
-  border-radius: 5px; /* Coins arrondis */
+    outline-offset: 0; /* Utilisez une valeur nulle ou positive */
+    -webkit-appearance: textfield; /* Apparence de champ de texte */
+    border: 1px solid #ccc; /* Bordure personnalisée */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
 }
 
 [type="search"]:focus {
-  border-color: #007bff; /* Couleur de bordure au focus */
-  outline: 2px solid #007bff; /* Ajoute un outline visible au focus */
-  outline-offset: 2px; /* Espacement positif pour l'outline */
+    border-color: #007bff; /* Couleur de bordure au focus */
+    outline: 2px solid #007bff; /* Ajoute un outline visible au focus */
+    outline-offset: 2px; /* Espacement positif pour l'outline */
 }
 
 ::-webkit-search-decoration {

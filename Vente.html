@@ -266,7 +266,7 @@
             <ol class="breadcrumb justify-content-center text-uppercase">
               <li class="breadcrumb-item"><a href="index.html">Acceuil</a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">
-                location
+                vente
               </li>
             </ol>
           </nav>
@@ -405,23 +405,51 @@
            <a class="btn btn-link" href="gestion.html">gestion de véhicules</a>
           
          </div>
-         <div class="col-lg-3 col-md-6">
-           <h4 class="text-light mb-4">Newsletter</h4>
-           <p>Enregistrez vous a notre newsletter pour ne rien rater.</p>
-           <div class="position-relative mx-auto" style="max-width: 400px">
-             <input
-               class="form-control border-0 w-100 py-3 ps-4 pe-5"
-               type="text"
-               placeholder="Your email"
-             />
-             <button
-               type="button"
-               class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-             >
-               SignUp
-             </button>
-           </div>
-         </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-light mb-4">Newsletter</h4>
+          <p>Enregistrez vous à notre newsletter pour ne rien rater.</p>
+          <div class="position-relative mx-auto" style="max-width: 400px">
+              <input
+                  id="emailInput"
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Votre email"
+              />
+              <button
+                  id="signupButton"
+                  type="button"
+                  class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+              >
+                  S'inscrire
+              </button>
+          </div>
+        </div>
+        <script>
+          document.getElementById('signupButton').addEventListener('click', function() {
+              const email = document.getElementById('emailInput').value;
+      
+              fetch('https://api.mailjet.com/v3/REST/contact', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'Authorization': 'Basic ' + btoa('YOUR_API_KEY:YOUR_API_SECRET')
+                  },
+                  body: JSON.stringify({
+                      "Email": email,
+                      "IsExcludedFromCampaigns": false
+                  })
+              })
+              .then(response => response.json())
+              .then(data => {
+                  console.log('Success:', data);
+                  alert('Inscription réussie !');
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+                  alert('Une erreur est survenue. Veuillez réessayer.');
+              });
+          });
+      </script>
        </div>
      </div>
      <div class="container">
