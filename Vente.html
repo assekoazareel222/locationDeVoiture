@@ -46,6 +46,7 @@
   </head>
   <style>
     /* Formulaire masqué par défaut */
+    /* Formulaire masqué par défaut */
     .custom-form {
       display: none;
       width: 50em;
@@ -69,40 +70,7 @@
     .blur-background {
       background-color: rgba(54, 41, 41, 0.384);
     }
-  /* Custom Styles */
-  .custom-form {
-        width: 50%;
-        margin: 50px auto;
-        padding: 2em;
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .custom-form h2 {
-        text-align: center;
-        margin-bottom: 1.5em;
-        color: #007bff;
-      }
-
-      .form-label {
-        color: #333;
-      }
-
-      .btn-submit {
-        background-color: #007bff;
-        color: white;
-        width: 100%;
-        padding: 12px;
-        font-size: 1.1em;
-        border-radius: 5px;
-        border: none;
-      }
-
-      .btn-submit:hover {
-        background-color: #0056b3;
-        transition: 0.3s ease;
-      }
+  
     /* Overlay pour sombre l'arrière-plan */
     .overlay {
       position: fixed;
@@ -324,12 +292,12 @@
               <div class="invalid-feedback">Please provide a valid city.</div>
             </div>
             <div class="w-50">
-              <label for="validationCustom04" class="form-label">couleur</label>
+              <label for="validationCustom04" class="form-label">livraison</label>
               <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">noir</option>
-                <option>bleu</option>
-                <option>vert</option>
-                <option>jaune</option>
+                <option selected disabled value="">selectionner une valeur</option>
+                <option>avec livraison</option>
+                <option>sans livraison</option>
+                
               </select>
               <div class="invalid-feedback">Please select a valid state.</div>
             </div>

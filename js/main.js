@@ -215,7 +215,7 @@
                   Consommation: ${car.consommation}<br />
                   Prix: ${car.prix} FCFA/jour
                 </p>
-                <a href="#" class="btn btn-primary reserver-btn" data-car-name="${car.nom}">Réserver</a>
+                <a href="#" class="btn btn-primary reserver-btn" data-car-name="${car.nom}">Acheter</a>
               </div>
             </div>
           </div>
