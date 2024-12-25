@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>BIABIA MOTORS</title>
@@ -69,7 +69,7 @@
         <div class="col-lg-7 px-5 text-start">
           <div class="h-100 d-inline-flex align-items-center py-3 me-4">
             <small class="fa fa-map-marker-alt text-primary me-2"></small>
-            <small>Au centre ville, Libreville, Gabon</small>
+            <small>Loui, notre Dame de Quaben, Gabon</small>
           </div>
           <div class="h-100 d-inline-flex align-items-center py-3">
             <small class="far fa-clock text-primary me-2"></small>
@@ -159,7 +159,7 @@
           </h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center text-uppercase">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="index.html">Acceuil</a></li>
               <li class="breadcrumb-item text-white active" aria-current="page">
                 Gestion
               </li>
@@ -201,9 +201,9 @@
                 style="background: rgba(0, 0, 0, 0.08)"
               >
                 <h1 class="display-4 text-white mb-0">
-                  15 <span class="fs-4">Années</span>
+                  3 <span class="fs-4">Années</span>
                 </h1>
-                <h4 class="text-white">Experiences</h4>
+                <h4 class="text-white">d'Experiences</h4>
               </div>
             </div>
           </div>
@@ -275,7 +275,7 @@
         <div class="col-lg-3 col-md-6">
           <h4 class="text-light mb-4">Address</h4>
           <p class="mb-2">
-            <i class="fa fa-map-marker-alt me-3"></i>Au centre ville, Libreville, GABON
+            <i class="fa fa-map-marker-alt me-3"></i>Loui, notre Dame de Quaben, Gabon
           </p>
           <p class="mb-2">
             <i class="fa fa-phone-alt me-3"></i>+241 074638595
@@ -304,27 +304,71 @@
         </div>
         <div class="col-lg-3 col-md-6">
           <h4 class="text-light mb-4">Services</h4>
-          <a class="btn btn-link" href="location.html">Location de voitures</a>
-          <a class="btn btn-link" href="Vente.html">Vente de voitures</a>
-          <a class="btn btn-link" href="gestion.html">Gestion de véhicules</a>
+          <a class="btn btn-link" href="location.html">location de véhicules</a>
+          <a class="btn btn-link" href="Vente.html">vente de véhicules</a>
+          <a class="btn btn-link" href="gestion.html">gestion de véhicules</a>
         </div>
         <div class="col-lg-3 col-md-6">
           <h4 class="text-light mb-4">Newsletter</h4>
-          <p>Enregistrez vous a notre newsletter pour ne rien rater.</p>
+          <p>Enregistrez vous à notre newsletter pour ne rien rater.</p>
           <div class="position-relative mx-auto" style="max-width: 400px">
-            <input
-              class="form-control border-0 w-100 py-3 ps-4 pe-5"
-              type="text"
-              placeholder="Your email"
-            />
-            <button
-              type="button"
-              class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-            >
-              SignUp
-            </button>
+              <input
+                  id="emailInput"
+                  class="form-control border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Votre email"
+              />
+              <button
+                  id="signupButton"
+                  type="button"
+                  class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+              >
+                  S'inscrire
+              </button>
           </div>
-        </div>
+      </div>
+      <script>
+        document.getElementById('signupButton').addEventListener('click', function() {
+            const email = document.getElementById('emailInput').value;
+    
+            // Validation de l'email
+            if (!isValidEmail(email)) {
+                alert('Veuillez entrer un email valide.');
+                return;
+            }
+    
+            fetch('https://api.mailjet.com/v3/REST/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Basic ' + btoa('8063de469d442e8dbc935a78a9c01d82:0c2dc55b6fa6e63e1103b65524dc9c8b')
+                },
+                body: JSON.stringify({
+                    "Email": email,
+                    "IsExcludedFromCampaigns": false
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur réseau');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                alert('Inscription réussie !');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            });
+        });
+    
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+    </script>
       </div>
     </div>
     <div class="container">

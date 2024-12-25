@@ -18,7 +18,8 @@
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
       $(".sticky-top").css("top", "0px");
-    } else {
+    } 
+    else {
       $(".sticky-top").css("top", "-100px");
     }
   });
@@ -143,13 +144,16 @@
       // Loop through each car and generate the HTML for each car card
       $.each(carData, function (index, car) {
         const cardHTML = `
-          <div class="col-md-4">
-            <div class="card">
+          <div class="col-md-4 p-4 ">
+            <div class="cardTop " style="height:320px ;  width: 90%" >
+
               <img
-                src="${car.image}"  // Use a default image if none is provided
-                class="card-img-top"
+                src='${car.image}';  // Use a default image if none is provided
+                class="card-img-top "
                 alt="${car.nom}"
+                style=" background-size: contain; height:100% !important"
               />
+               </div>
               <div class="card-body">
                 <h5 class="card-title">${car.nom}</h5>
                 <p class="card-text">

@@ -4,7 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -203,8 +203,9 @@ sup {
   top: -0.5em;
 }
 a {
-  color: #3113d8;
+  color: #0300aa;
   text-decoration: none;
+  
 }
 a:hover {
   color: #335188;
@@ -302,7 +303,7 @@ optgroup,
 textarea {
   margin: 0;
   font-family: inherit;
-  font-size: inherit;
+  font-size: large;
   line-height: inherit;
 }
 button,
@@ -325,8 +326,21 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+    -webkit-appearance: button; /* Rendre le bouton comme un bouton standard */
+    appearance: button; /* Support pour d'autres navigateurs */
+    background-color: #354edc; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    border: 2px solid #007bff; /* Bordure du bouton */
+    border-radius: 0px; /* Coins arrondis */
+    padding: 16px 48px; /* Espacement interne */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s; /* Transition douce */
 }
+
+button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
@@ -375,9 +389,19 @@ legend + * {
   height: auto;
 }
 [type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: textfield;
+    outline-offset: 0; /* Utilisez une valeur nulle ou positive */
+    -webkit-appearance: textfield; /* Apparence de champ de texte */
+    border: 1px solid #ccc; /* Bordure personnalisée */
+    padding: 10px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
 }
+
+[type="search"]:focus {
+    border-color: #007bff; /* Couleur de bordure au focus */
+    outline: 2px solid #007bff; /* Ajoute un outline visible au focus */
+    outline-offset: 2px; /* Espacement positif pour l'outline */
+}
+
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
