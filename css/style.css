@@ -340,7 +340,7 @@
   color: #ffffff;
   font-size: 15px;
   font-weight: normal;
-  text-transform: capitalize;
+  text-transform: lowercase;
   transition: 0.3s;
 }
 
