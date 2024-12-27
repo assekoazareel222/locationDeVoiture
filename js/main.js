@@ -214,9 +214,9 @@
                 <p class="card-text">
                   Marque: ${car.nom}<br />
                   Boite de vitesse: ${car.boiteDeVitesse}<br />
-                  Condition: ${car.condition}<br />
+                  
                   Consommation: ${car.consommation}<br />
-                  Prix: ${car.prix} FCFA/jour
+                  
                 </p>
                 <a href="#" class="btn btn-primary reserver-btn" data-car-name="${car.nom}">Acheter</a>
               </div>
