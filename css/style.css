@@ -397,3 +397,8 @@
 #otherImages img:hover {
   opacity: 1;
 }
+@media (max-width: 410px){
+.none{
+  height: 35px;
+}
+}
