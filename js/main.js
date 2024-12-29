@@ -212,7 +212,7 @@
               <div class="card-body">
                 <h5 class="card-title">${car.marque}</h5>
                 <p class="card-text">
-                  Marque: ${car.model}<br />
+                  Model: ${car.model}<br />
                   Boite de vitesse: ${car.boiteDeVitesse}<br />
                   
                   Consommation: ${car.consommation}<br />
