@@ -161,7 +161,7 @@
                   Boite de vitesse: ${car.boiteDeVitesse}<br />
                   Condition: ${car.condition}<br />
                   Consommation: ${car.consommation}<br />
-                  Prix: ${car.prix} FCFA/jour
+                  Prix: ${car.prix}.000 FCFA/jour
                 </p>
                 <a href="#" class="btn btn-primary reserver-btn" data-car-name="${car.nom}">Réserver</a>
               </div>
@@ -210,12 +210,13 @@
                 alt="${car.nom}"
               />
               <div class="card-body">
-                <h5 class="card-title">${car.nom}</h5>
+                <h5 class="card-title">${car.marque}</h5>
                 <p class="card-text">
-                  Marque: ${car.nom}<br />
+                  Marque: ${car.model}<br />
                   Boite de vitesse: ${car.boiteDeVitesse}<br />
                   
                   Consommation: ${car.consommation}<br />
+                  kilometrage: ${car.kilometrage}<br />
                   
                 </p>
                 <a href="#" class="btn btn-primary reserver-btn" data-car-name="${car.nom}">Acheter</a>

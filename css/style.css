@@ -315,6 +315,12 @@
   background: linear-gradient(rgba(7, 10, 0), rgba(23, 58, 124));
 }
 
+
+.ligne{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .footer .btn.btn-social {
   margin-right: 5px;
   width: 35px;

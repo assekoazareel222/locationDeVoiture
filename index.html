@@ -284,7 +284,7 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
             <i class="fa fa-check fa-2x text-white mb-3"></i>
-            <h2 class="text-white mb-2" data-toggle="counter-up">5</h2>
+            <h2 class="text-white mb-2" data-toggle="counter-up">3</h2>
             <p class="text-white mb-0">Années d'expérience</p>
           </div>
           <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
@@ -371,7 +371,7 @@
                   </div>
                   <div class="col-md-6">
                     <h3 class="mb-3">
-                      5 ans d'expérience dans la location de véhicules
+                      3 ans d'expérience dans la location de véhicules
                     </h3>
                     <p class="mb-4">
                       Découvrez la liberté de vous déplacer à votre rythme avec notre service de location de voitures. Que vous ayez besoin d'une voiture pour un week-end en escapade ou un rendez-vous d'affaires , nous avons le véhicule qu'il vous faut.
@@ -405,7 +405,7 @@
                   </div>
                   <div class="col-md-6">
                     <h3 class="mb-3">
-                      5 ans d'expérience dans la Vente de véhicules
+                      3 ans d'expérience dans la Vente de véhicules
                     </h3>
                     <p class="mb-4">
                       Êtes-vous prêt à prendre la route avec style et confort ? Nos voitures allient performance, sécurité et design moderne pour répondre à tous vos besoins. Que vous cherchiez une citadine agile, un SUV spacieux ou une berline élégante, nous avons le modèle parfait pour vous.
@@ -439,7 +439,7 @@
                   </div>
                   <div class="col-md-6">
                     <h3 class="mb-3">
-                      5 ans d'expérience dans la gestion de véhicules
+                      3 ans d'expérience dans la gestion de véhicules
                     </h3>
                     <p class="mb-4">
                       Nous veillons à ce que tous vos véhicules respectent les normes de sécurité et les réglementations en vigueur, en gérant les inspections et les documents nécessaires. Donc vous pouvez nous confier votre véhicule et percevoir un revenu allant jusqu'à 600 000 FCFA
@@ -737,7 +737,7 @@
       data-wow-delay="0.1s"
     >
       <div class="container py-5">
-        <div class="row g-5">
+        <div class="row g-5 ligne">
           <div class="col-lg-3 col-md-6">
             <h4 class="text-light mb-4">Address</h4>
             <p class="mb-2">
@@ -774,52 +774,7 @@
             <a class="btn btn-link" href="Vente.html">vente de véhicules</a>
             <a class="btn btn-link" href="gestion.html">gestion de véhicules</a>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <h4 class="text-light mb-4">Newsletter</h4>
-            <p>Enregistrez vous à notre newsletter pour ne rien rater.</p>
-            <div class="position-relative mx-auto" style="max-width: 400px">
-                <input
-                    id="emailInput"
-                    class="form-control border-0 w-100 py-3 ps-4 pe-5"
-                    type="text"
-                    placeholder="Votre email"
-                />
-                <button
-                    id="signupButton"
-                    type="button"
-                    class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
-                >
-                    S'inscrire
-                </button>
-            </div>
-          </div>
-        
-        <script>
-            document.getElementById('signupButton').addEventListener('click', function() {
-                const email = document.getElementById('emailInput').value;
-        
-                fetch('https://api.mailjet.com/v3/REST/contact', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Basic ' + btoa('YOUR_API_KEY:YOUR_API_SECRET')
-                    },
-                    body: JSON.stringify({
-                        "Email": email,
-                        "IsExcludedFromCampaigns": false
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    alert('Inscription réussie !');
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    alert('Une erreur est survenue. Veuillez réessayer.');
-                });
-            });
-        </script>
+          
         
         </div>
       </div>
